@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive 3D Solar System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <div class="loading" id="loading">
+            <div class="loading-spinner"></div>
+            <p>Loading Solar System...</p>
+        </div>
+        
+        <canvas id="canvas"></canvas>
+        
+        <div class="control-panel">
+            <h2>🚀 Solar System Controls</h2>
+            
+            <div class="main-controls">
+                <button class="btn btn-primary" id="pauseBtn">Pause</button>
+                <button class="btn btn-danger" id="resetBtn">Reset</button>
+            </div>
+            
+            <div id="planetControls"></div>
+        </div>
+        
+        <div class="info-panel">
+    <h3>🪐 Planet Information</h3>
+    <div id="planetInfo">
+        <p>Click on a planet to see detailed information</p>
+    </div>
+    <div id="planetDetails" class="planet-details">
+        <!-- Detailed planet information will be loaded here -->
+    </div>
+</div>
+        
+<div class="search-panel">
+    <div class="search-container">
+        <input type="text" class="search-input" id="planetSearch" placeholder="🔍 Search planets (e.g., Mars, Jupiter)">
+        <div class="search-results" id="searchResults"></div>
+    </div>
+</div>
+
+        <div class="settings-panel">
+            <div class="setting-item">
+                <div class="checkbox checked" id="orbitsCheck"></div>
+                <label>Show Orbits</label>
+            </div>
+            <div class="setting-item">
+                <div class="checkbox checked" id="starsCheck"></div>
+                <label>Show Stars</label>
+            </div>
+            <div class="setting-item">
+                <div class="checkbox checked" id="labelsCheck"></div>
+                <label>Show Labels</label>
+            </div>
+            <div class="setting-item">
+                <div class="checkbox checked" id="autoRotateCheck"></div>
+                <label>Auto Rotate</label>
+            </div>
+        </div>
+        
+        <div class="view-controls">
+            <h4>🎮 360° View Controls</h4>
+            <div class="zoom-control">
+                <span>Zoom:</span>
+                <input type="range" id="zoomSlider" class="zoom-slider" min="50" max="200" value="100">
+            </div>
+            <div class="view-instructions">
+                <strong>Mouse:</strong> Drag to rotate<br>
+                <strong>Wheel:</strong> Zoom in/out<br>
+                <strong>Touch:</strong> Drag & pinch<br>
+                <strong>Click:</strong> Focus planet
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
